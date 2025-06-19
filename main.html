@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plateforme Juridique Marocaine</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Styles Globaux */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: #1a237e;
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .logo a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+        
+        nav ul li a:hover {
+            opacity: 0.8;
+        }
+        
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://via.placeholder.com/1200x600') no-repeat center center/cover;
+            color: white;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary {
+            background-color: #d32f2f;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #b71c1c;
+        }
+        
+        .btn-outline {
+            border: 2px solid white;
+            color: white;
+        }
+        
+        .btn-outline:hover {
+            background-color: white;
+            color: #1a237e;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+            color: #1a237e;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-content {
+            padding: 1.5rem;
+        }
+        
+        .card-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #1a237e;
+        }
+        
+        /* Textes de Lois Section */
+        .lois-section {
+            padding: 4rem 0;
+            background-color: white;
+        }
+        
+        .lois-list {
+            margin-top: 2rem;
+        }
+        
+        .loi-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .loi-item:last-child {
+            border-bottom: none;
+        }
+        
+        .loi-info h3 {
+            font-size: 1.2rem;
+            color: #1a237e;
+        }
+        
+        .loi-info p {
+            color: #666;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #1a237e;
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1.5rem 0;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            margin-top: 1.5rem;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        /* Page Textes de Lois */
+        .lois-page {
+            padding: 2rem 0;
+        }
+        
+        /* Page Jurisprudences */
+        .jurisprudence-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .jurisprudence-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .jurisprudence-content {
+            padding: 1.5rem;
+        }
+        
+        .jurisprudence-content h3 {
+            margin-bottom: 0.5rem;
+            color: #1a237e;
+        }
+        
+        .jurisprudence-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .jurisprudence-tag {
+            background-color: #d32f2f;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        
+        .jurisprudence-date {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 250px;
+                margin-bottom: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">Droit Maroc</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="lois.html">Textes de Lois</a></li>
+                    <li><a href="jurisprudences.html">Jurisprudences</a></li>
+                    <li><a href="actualites.html">Actualités</a></li>
+                    <li><a href="glossaire.html">Glossaire</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Plateforme Juridique Marocaine</h1>
+            <p>Ressources complètes sur le droit marocain - Textes de lois, jurisprudences, actualités juridiques et glossaire</p>
+            <div class="cta-buttons">
+                <a href="lois.html" class="btn btn-primary">Textes de Lois</a>
+                <a href="jurisprudences.html" class="btn btn-outline">Jurisprudences</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nos Rubriques</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="card-content">
+                        <h3>Textes de Lois</h3>
+                        <p>Accédez aux principaux codes et textes de loi marocains sous forme de documents téléchargeables.</p>
+                        <a href="lois.html" class="btn btn-primary" style="margin-top: 1rem;">Voir les textes</a>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="card-content">
+                        <h3>Jurisprudences</h3>
+                        <p>Décisions judiciaires illustrant l'application du droit marocain, classées par branches du droit.</p>
+                        <a href="jurisprudences.html" class="btn btn-primary" style="margin-top: 1rem;">Voir les décisions</a>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="card-content">
+                        <h3>Actualités Juridiques</h3>
+                        <p>Suivez les évolutions récentes du droit marocain, les réformes législatives et les grands débats.</p>
+                        <a href="actualites.html" class="btn btn-primary" style="margin-top: 1rem;">Voir les actualités</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Textes de Lois Section -->
+    <section class="lois-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Textes de Lois Principaux</h2>
+                <p>Les principales sources formelles du droit marocain</p>
+            </div>
+            <div class="lois-list">
+                <div class="loi-item">
+                    <div class="loi-info">
+                        <h3>Code Pénal</h3>
+                        <p>Réunit l'ensemble des infractions et les peines prévues par la loi marocaine.</p>
+                    </div>
+                    <a href="/home/asebrani/Downloads/test/code_penal.pdf" class="btn btn-outline" style="color: #1a237e; border-color: #1a237e;">Voir le texte</a>
+                </div>
+                <div class="loi-item">
+                    <div class="loi-info">
+                        <h3>Code de la Famille (Moudawana)</h3>
+                        <p>Encadre le mariage, le divorce, la filiation, la garde des enfants, etc.</p>
+                    </div>
+                    <a href="/home/asebrani/Downloads/test/Code famille_.pdf" class="btn btn-outline" style="color: #1a237e; border-color: #1a237e;">Voir le texte</a>
+                </div>
+                <div class="loi-item">
+                    <div class="loi-info">
+                        <h3>Loi 31-08</h3>
+                        <p>Protège les droits des consommateurs (contrats, publicité, réclamations).</p>
+                    </div>
+                    <a href="/home/asebrani/Downloads/test/loi 31-08 relative Ã  la protection du consommateur.pdf" class="btn btn-outline" style="color: #1a237e; border-color: #1a237e;">Voir le texte</a>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="lois.html" class="btn btn-primary">Voir tous les textes de lois</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Jurisprudences Section -->
+    <section class="features" style="background-color: #f9f9f9;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Dernières Jurisprudences</h2>
+                <p>Décisions récentes des juridictions marocaines</p>
+            </div>
+            <div class="jurisprudence-grid">
+                <div class="jurisprudence-card">
+                    <div class="jurisprudence-content">
+                        <h3>Affaire de divorce pour préjudice</h3>
+                        <div class="jurisprudence-meta">
+                            <span class="jurisprudence-tag">Droit de la famille</span>
+                            <span class="jurisprudence-date">15/03/2023</span>
+                        </div>
+                        <p>La Cour d'Appel de Casablanca a statué sur un cas de divorce pour préjudice où l'épouse a obtenu gain de cause...</p>
+                        <a href="jurisprudence-1.html" class="btn btn-outline" style="color: #1a237e; border-color: #1a237e; margin-top: 1rem; display: inline-block;">Voir les détails</a>
+                    </div>
+                </div>
+                <div class="jurisprudence-card">
+                    <div class="jurisprudence-content">
+                        <h3>Licenciement abusif</h3>
+                        <div class="jurisprudence-meta">
+                            <span class="jurisprudence-tag">Droit du travail</span>
+                            <span class="jurisprudence-date">02/04/2023</span>
+                        </div>
+                        <p>La Cour Suprême a confirmé la décision de la cour d'appel concernant un licenciement sans cause réelle et sérieuse...</p>
+                        <a href="jurisprudence-2.html" class="btn btn-outline" style="color: #1a237e; border-color: #1a237e; margin-top: 1rem; display: inline-block;">Voir les détails</a>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="jurisprudences.html" class="btn btn-primary">Voir toutes les jurisprudences</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="logo" style="font-size: 1.8rem; margin-bottom: 1rem;">
+                <a href="index.html" style="color: white;">Droit Maroc</a>
+            </div>
+            <p>Plateforme complète de ressources juridiques marocaines</p>
+            <div class="footer-links">
+                <a href="mentions-legales.html">Mentions Légales</a>
+                <a href="contact.html">Contact</a>
+                <a href="a-propos.html">À propos</a>
+            </div>
+            <div class="copyright">
+                <p>© 2023 Plateforme Juridique Marocaine. Développé par Master Professions Juridiques et Judiciaires</p>
+                <p>Sous l'encadrement de Professeur Actouri Sonde</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scripts simples pour démonstration
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Site web juridique marocain chargé');
+            
+            // Animation simple pour les cartes
+            const cards = document.querySelectorAll('.feature-card, .jurisprudence-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                });
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glossaire Juridique | Droit Maroc</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: #1a237e;
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .logo a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+        
+        nav ul li a:hover {
+            opacity: 0.8;
+        }
+        
+        .active {
+            font-weight: 700;
+            text-decoration: underline;
+        }
+        
+        /* Main Content */
+        .glossaire-page {
+            padding: 4rem 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+            color: #1a237e;
+        }
+        
+        .alphabet-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .alphabet-filter a {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #f0f0f0;
+            color: #1a237e;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        
+        .alphabet-filter a:hover, .alphabet-filter a.active {
+            background-color: #1a237e;
+            color: white;
+        }
+        
+        .glossaire-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .glossaire-item {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .glossaire-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .glossaire-term {
+            font-weight: 700;
+            color: #1a237e;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .glossaire-definition {
+            color: #555;
+            text-align: justify;
+        }
+        
+        .search-box {
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            position: relative;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 0.8rem 1.5rem;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            font-size: 1rem;
+            padding-right: 3rem;
+            transition: border-color 0.3s;
+        }
+        
+        .search-box input:focus {
+            outline: none;
+            border-color: #1a237e;
+        }
+        
+        .search-box button {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #1a237e;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .search-box button:hover {
+            color: #0d47a1;
+        }
+        
+        .letter-section {
+            margin-bottom: 2rem;
+        }
+        
+        .letter-header {
+            background-color: #1a237e;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 6px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-align: center;
+        }
+        
+        .no-results {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            padding: 2rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #1a237e;
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1.5rem 0;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            margin-top: 1.5rem;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem;
+            }
+            
+            .glossaire-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .alphabet-filter {
+                gap: 0.3rem;
+            }
+            
+            .alphabet-filter a {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">Droit Maroc</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="lois.html">Textes de Lois</a></li>
+                    <li><a href="jurisprudences.html">Jurisprudences</a></li>
+                    <li><a href="actualites.html">Actualités</a></li>
+                    <li><a href="glossaire.html" class="active">Glossaire</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="glossaire-page">
+        <div class="container">
+            <div class="section-title">
+                <h2>Glossaire Juridique Marocain</h2>
+                <p>Définitions complètes des termes juridiques spécifiques au droit marocain</p>
+            </div>
+            
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Rechercher un terme juridique...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+            
+            <div class="alphabet-filter">
+                <a href="#A" data-letter="A">A</a>
+                <a href="#B" data-letter="B">B</a>
+                <a href="#C" data-letter="C">C</a>
+                <a href="#D" data-letter="D">D</a>
+                <a href="#E" data-letter="E">E</a>
+                <a href="#F" data-letter="F">F</a>
+                <a href="#G" data-letter="G">G</a>
+                <a href="#H" data-letter="H">H</a>
+                <a href="#I" data-letter="I">I</a>
+                <a href="#J" data-letter="J">J</a>
+                <a href="#K" data-letter="K">K</a>
+                <a href="#L" data-letter="L">L</a>
+                <a href="#M" data-letter="M">M</a>
+                <a href="#N" data-letter="N">N</a>
+                <a href="#O" data-letter="O">O</a>
+                <a href="#P" data-letter="P">P</a>
+                <a href="#Q" data-letter="Q">Q</a>
+                <a href="#R" data-letter="R">R</a>
+                <a href="#S" data-letter="S">S</a>
+                <a href="#T" data-letter="T">T</a>
+                <a href="#U" data-letter="U">U</a>
+                <a href="#V" data-letter="V">V</a>
+                <a href="#W" data-letter="W">W</a>
+                <a href="#X" data-letter="X">X</a>
+                <a href="#Y" data-letter="Y">Y</a>
+                <a href="#Z" data-letter="Z">Z</a>
+            </div>
+            
+            <div id="glossaireContainer">
+                <!-- Section A -->
+                <div class="letter-section">
+                    <div class="letter-header" id="A">A</div>
+                    <div class="glossaire-list">
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Abus</div>
+                            <div class="glossaire-definition">Désigne le dépassement des limites d'un droit ou d'un pouvoir légalement accordé, par un usage excessif ou détourné. Cela peut entraîner des sanctions.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Abus de biens sociaux</div>
+                            <div class="glossaire-definition">Infraction consistant pour un dirigeant à utiliser, de mauvaise foi, les ressources ou pouvoirs d'une société à des fins personnelles ou au profit d'une autre société dans laquelle il a un intérêt, au détriment de l'intérêt social.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Abus de confiance</div>
+                            <div class="glossaire-definition">Infraction par laquelle une personne détourne un bien qui lui a été confié pour un usage spécifique, en l'utilisant à son profit ou à celui d'un tiers.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Accident de travail</div>
+                            <div class="glossaire-definition">Tout accident survenu pendant ou en raison du travail, affectant une personne employée, quel que soit le lieu ou le type de contrat.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Accord</div>
+                            <div class="glossaire-definition">Rencontre de volontés entre deux ou plusieurs parties visant à créer des effets juridiques, comme un contrat, mariage, ou divorce par consentement mutuel.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Accusé</div>
+                            <div class="glossaire-definition">Personne poursuivie devant une juridiction pour une infraction, que ce soit un crime ou un délit.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Acte juridique</div>
+                            <div class="glossaire-definition">Manifestation de volonté destinée à produire des effets juridiques, notamment la création, modification ou extinction d'un droit.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Action en justice</div>
+                            <div class="glossaire-definition">Droit pour toute personne de saisir une juridiction afin de faire valoir ses droits ou intérêts légitimes.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Action publique</div>
+                            <div class="glossaire-definition">Action menée au nom de la société pour sanctionner une infraction, exercée par le ministère public.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Actionnaire</div>
+                            <div class="glossaire-definition">Personne qui détient des parts ou actions dans une société.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Adoul</div>
+                            <div class="glossaire-definition">Notaire marocain habilité à rédiger des actes authentiques, notamment pour les contrats de mariage, les successions, etc.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Adultère</div>
+                            <div class="glossaire-definition">Infraction pénale constituée par le fait pour un époux d'avoir des relations sexuelles avec une autre personne que son conjoint.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Affectio societatis</div>
+                            <div class="glossaire-definition">Intention des associés de collaborer sur un pied d'égalité pour gérer une société.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Allocation</div>
+                            <div class="glossaire-definition">Aide financière attribuée à une personne en fonction d'un besoin spécifique.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Amana</div>
+                            <div class="glossaire-definition">Dépôt ou garde d'un bien confié à une personne de confiance (dépositaire).</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Amnistie</div>
+                            <div class="glossaire-definition">Mesure légale annulant les poursuites et peines pour certains faits, tout en reconnaissant leur existence.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Apatride</div>
+                            <div class="glossaire-definition">Personne dépourvue de nationalité, ne relevant d'aucun État.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Ad hoc</div>
+                            <div class="glossaire-definition">Expression latine désignant un acte ou procédure établi spécifiquement pour un but déterminé, souvent temporaire et limité à un cas particulier.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section B -->
+                <div class="letter-section">
+                    <div class="letter-header" id="B">B</div>
+                    <div class="glossaire-list">
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Bail</div>
+                            <div class="glossaire-definition">Contrat par lequel une personne (bailleur) donne à une autre (preneur) la jouissance d'un bien moyennant un loyer.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Banqueroute</div>
+                            <div class="glossaire-definition">Infraction liée à la faillite frauduleuse d'un commerçant ou d'une entreprise.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Barème</div>
+                            <div class="glossaire-definition">Grille fixant des montants tels que salaires ou indemnités, selon des règles légales ou contractuelles.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Barreau</div>
+                            <div class="glossaire-definition">Ensemble des avocats inscrits auprès d'une cour, dirigé par un bâtonnier.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Bâtonnier</div>
+                            <div class="glossaire-definition">Avocat élu pour représenter et diriger le barreau.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Bay'</div>
+                            <div class="glossaire-definition">Contrat de vente en droit marocain, régi par les dispositions du Code des obligations et des contrats.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Bénéficiaire</div>
+                            <div class="glossaire-definition">Personne recevant un droit, avantage ou bien (ex. assurance, testament).</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Bien commun / propre</div>
+                            <div class="glossaire-definition">En droit matrimonial, biens appartenant aux deux époux (commun) ou à un seul (propre).</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Bien meuble / immeuble</div>
+                            <div class="glossaire-definition">Bien meuble : objet mobile. Bien immeuble : bien fixe, comme un terrain ou une maison.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Bloc de constitutionnalité</div>
+                            <div class="glossaire-definition">Ensemble des normes constitutionnelles (Constitution, préambule, droits fondamentaux).</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section C -->
+                <div class="letter-section">
+                    <div class="letter-header" id="C">C</div>
+                    <div class="glossaire-list">
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Capacité juridique</div>
+                            <div class="glossaire-definition">Aptitude à être titulaire de droits et à les exercer.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Caution</div>
+                            <div class="glossaire-definition">Personne s'engageant à garantir le paiement d'une dette.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Cautionnement</div>
+                            <div class="glossaire-definition">Contrat par lequel une caution s'engage envers un créancier.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Cession</div>
+                            <div class="glossaire-definition">Transmission d'un droit ou bien à un tiers.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Chraâ</div>
+                            <div class="glossaire-definition">Terme désignant la loi islamique, source de droit au Maroc notamment en matière de statut personnel.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Clause pénale</div>
+                            <div class="glossaire-definition">Clause prévoyant une indemnité forfaitaire en cas d'inexécution d'un contrat.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Code</div>
+                            <div class="glossaire-definition">Recueil organisé de lois.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Code de procédure civile</div>
+                            <div class="glossaire-definition">Ensemble des règles régissant la procédure devant les juridictions civiles.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Code pénal</div>
+                            <div class="glossaire-definition">Recueil des infractions pénales et des sanctions.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Complice</div>
+                            <div class="glossaire-definition">Personne participant à une infraction sans être l'auteur principal.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Compétence</div>
+                            <div class="glossaire-definition">Aptitude légale d'une juridiction à juger une affaire.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Conciliation</div>
+                            <div class="glossaire-definition">Mode alternatif de résolution d'un conflit par accord amiable.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Condamnation</div>
+                            <div class="glossaire-definition">Décision de justice imposant une peine ou une réparation.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Conflit d'intérêts</div>
+                            <div class="glossaire-definition">Situation où des intérêts personnels risquent d'influencer de façon partiale une décision professionnelle ou publique.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Constitution</div>
+                            <div class="glossaire-definition">Loi fondamentale définissant les institutions et droits fondamentaux d'un État.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Contrefaçon</div>
+                            <div class="glossaire-definition">Violation d'un droit de propriété intellectuelle.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Contrainte</div>
+                            <div class="glossaire-definition">Pression illégale ou autorisée exercée sur une personne.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Contrat</div>
+                            <div class="glossaire-definition">Accord entre deux ou plusieurs parties créant des obligations.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section D -->
+                <div class="letter-section">
+                    <div class="letter-header" id="D">D</div>
+                    <div class="glossaire-list">
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Dahir</div>
+                            <div class="glossaire-definition">Décret royal ayant force de loi, forme que prennent les textes législatifs au Maroc.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Débiteur</div>
+                            <div class="glossaire-definition">Personne tenue d'exécuter une prestation envers un créancier.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Déchéance</div>
+                            <div class="glossaire-definition">Perte d'un droit, soit en sanction, soit par non-respect des conditions d'exercice.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Décret</div>
+                            <div class="glossaire-definition">Acte émanant du pouvoir exécutif, intervenant dans le domaine règlementaire.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Délibération</div>
+                            <div class="glossaire-definition">Discussion préalable d'un organe collectif avant prise de décision.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Délinquant</div>
+                            <div class="glossaire-definition">Auteur ou complice d'une infraction pénale.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Demandeur</div>
+                            <div class="glossaire-definition">Partie qui engage une action en justice.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Défendeur</div>
+                            <div class="glossaire-definition">Personne contre laquelle une action est engagée.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Débours de l'État</div>
+                            <div class="glossaire-definition">Dépenses engagées par l'État dans le cadre d'un procès.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Degré de juridiction</div>
+                            <div class="glossaire-definition">Position d'une juridiction dans la hiérarchie judiciaire.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Dérogation</div>
+                            <div class="glossaire-definition">Exception à une règle de droit.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Directive</div>
+                            <div class="glossaire-definition">Instruction moins impérative qu'un ordre.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Dispositif du jugement</div>
+                            <div class="glossaire-definition">Partie de la décision de justice prononçant le sort des conclusions.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Divorce</div>
+                            <div class="glossaire-definition">Rupture légale du mariage.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Doctrine</div>
+                            <div class="glossaire-definition">Ensemble des opinions des auteurs en droit.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Dol</div>
+                            <div class="glossaire-definition">Manœuvre frauduleuse viciant le consentement à un acte juridique.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Dommage</div>
+                            <div class="glossaire-definition">Préjudice certain et direct ouvrant droit à réparation.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Dommages et intérêts</div>
+                            <div class="glossaire-definition">Somme versée pour réparer un dommage causé.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section E -->
+                <div class="letter-section">
+                    <div class="letter-header" id="E">E</div>
+                    <div class="glossaire-list">
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Échangiste</div>
+                            <div class="glossaire-definition">Partie à un contrat d'échange.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Édiction</div>
+                            <div class="glossaire-definition">Acte d'une autorité mettant en vigueur une règle.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Effet</div>
+                            <div class="glossaire-definition">Conséquence juridique d'un acte juridique.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Élargissement</div>
+                            <div class="glossaire-definition">Mise en liberté d'une personne détenue.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Électeur</div>
+                            <div class="glossaire-definition">Personne habilitée à voter.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Enchère</div>
+                            <div class="glossaire-definition">Offre supérieure lors d'une adjudication.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Encourir</div>
+                            <div class="glossaire-definition">S'exposer à une sanction ou conséquence juridique.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Endommager</div>
+                            <div class="glossaire-definition">Causer un dommage à une chose.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Engagement</div>
+                            <div class="glossaire-definition">Manifestation de volonté obligeant une personne.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Enquête préliminaire</div>
+                            <div class="glossaire-definition">Phase initiale de la procédure pénale visant à recueillir des preuves.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Entrée en vigueur</div>
+                            <div class="glossaire-definition">Moment où une loi ou un texte devient applicable.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Exécutif (pouvoir)</div>
+                            <div class="glossaire-definition">Organes chargés de diriger la politique de l'État.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Exécution</div>
+                            <div class="glossaire-definition">Droit d'obtenir la mise en œuvre d'une décision de justice.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Exécution forcée</div>
+                            <div class="glossaire-definition">Moyens contraignants pour obliger à exécuter une obligation.</div>
+                        </div>
+                        
+                        <div class="glossaire-item">
+                            <div class="glossaire-term">Expédition</div>
+                            <div class="glossaire-definition">Copie certifiée conforme d'un acte authentique.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section F -->
+               <div class="letter-section"> <div class="letter-header" id="F">F</div> <div class="glossaire-list"> <div class="glossaire-item"> <div class="glossaire-term">Fait juridique</div> <div class="glossaire-definition">Événement produisant des effets juridiques sans volonté des parties.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Filiation</div> <div class="glossaire-definition">Lien juridique entre un enfant et ses parents.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Filiale</div> <div class="glossaire-definition">Société contrôlée majoritairement par une autre.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Fondation</div> <div class="glossaire-definition">Affectation irrévocable de biens à une œuvre d’intérêt général.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Fonds de commerce</div> <div class="glossaire-definition">Ensemble des biens mobiliers affectés à une activité commerciale.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Forclusion</div> <div class="glossaire-definition">Perte d’un droit par expiration d’un délai.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Force de chose jugée</div> <div class="glossaire-definition">Caractère définitif d’un jugement.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Force majeure</div> <div class="glossaire-definition">Événement imprévisible et irrésistible empêchant l’exécution d’une obligation.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Formalisme</div> <div class="glossaire-definition">Ensemble des formalités exigées pour la validité ou preuve des actes.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Frais</div> <div class="glossaire-definition">Dépenses liées à un procès.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Franchise</div> <div class="glossaire-definition">Contrat autorisant la commercialisation sous une marque moyennant rémunération.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Fructus</div> <div class="glossaire-definition">Droit de percevoir les fruits d’un bien sans en altérer la substance.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Fusion</div> <div class="glossaire-definition">Regroupement de plusieurs sociétés en une seule.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Flagrant délit</div> <div class="glossaire-definition">Situation où une infraction est constatée au moment même ou immédiatement après sa commission.</div> </div> </div> </div>
+
+<div class="letter-section"> <div class="letter-header" id="G">G</div> <div class="glossaire-list"> <div class="glossaire-item"> <div class="glossaire-term">Gage</div> <div class="glossaire-definition">Contrat par lequel un bien meuble est remis en garantie d’une dette.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Garde à vue</div> <div class="glossaire-definition">Retenue d’une personne suspectée pour enquête policière.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Garde alternée</div> <div class="glossaire-definition">Partage égal de la garde d’un enfant après divorce.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Garde des scellés</div> <div class="glossaire-definition">Responsabilité de conserver les objets saisis.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Garde légale</div> <div class="glossaire-definition">Autorité parentale conférée par la loi.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Gérance</div> <div class="glossaire-definition">Direction et gestion d’une société.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Garantie des vices cachés</div> <div class="glossaire-definition">Obligation du vendeur de garantir que le bien vendu ne présente pas de défauts cachés affectant son usage.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Gestion d’affaires</div> <div class="glossaire-definition">Intervention volontaire pour gérer les affaires d’autrui sans mandat.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Greffier</div> <div class="glossaire-definition">Auxiliaire chargé de la rédaction et conservation des actes judiciaires.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Groupement d’intérêt économique (GIE)</div> <div class="glossaire-definition">Association d’entreprises pour collaborer sans former une société.</div> </div> </div> </div>
+        
+
+<div class="letter-section"> <div class="letter-header" id="H">H</div> <div class="glossaire-list"> <div class="glossaire-item"> <div class="glossaire-term">Habeas corpus</div> <div class="glossaire-definition">Garantie judiciaire protégeant contre les détentions arbitraires.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Habilitation</div> <div class="glossaire-definition">Attribution de pouvoirs pour accomplir un acte juridique au nom d’une autre personne.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Habitation bourgeoise (clause d’)</div> <div class="glossaire-definition">Clause limitant l’usage d’un bien loué à un usage d’habitation.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Habituel</div> <div class="glossaire-definition">Qui est fait selon une habitude ou pratique constante.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Hérédité</div> <div class="glossaire-definition">Ensemble des biens transmis par une personne décédée.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Héritage</div> <div class="glossaire-definition">Acquisition de biens par succession.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Hiérarchie des normes</div> <div class="glossaire-definition">Classement des règles juridiques selon leur autorité.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Heures supplémentaires</div> <div class="glossaire-definition">Travail effectué au-delà de l’horaire légal, ouvrant droit à majoration.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Homicide volontaire</div> <div class="glossaire-definition">Crime de donner intentionnellement la mort à autrui.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Homologation</div> <div class="glossaire-definition">Approbation judiciaire d’un acte juridique.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Honoraires</div> <div class="glossaire-definition">Rémunération des professionnels libéraux.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Huissier de justice</div> <div class="glossaire-definition">Officier ministériel chargé de signifier les actes et procéder à l’exécution des décisions.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Huis clos</div> <div class="glossaire-definition">Audience sans public, par exception au principe de publicité.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Hypothèque</div> <div class="glossaire-definition">Droit accordé à un créancier sur un bien immobilier pour garantir une dette.</div> </div> </div> </div>  
+<div class="letter-section"> <div class="letter-header" id="I">I</div> <div class="glossaire-list"> <div class="glossaire-item"> <div class="glossaire-term">Illégitime</div> <div class="glossaire-definition">Qui manque de légitimité morale, politique ou juridique.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Immigration</div> <div class="glossaire-definition">Installation dans un pays étranger dans le but d’y travailler ou résider.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Incapable</div> <div class="glossaire-definition">Personne légalement privée de la capacité d’exercer ses droits.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Incarcération</div> <div class="glossaire-definition">Mise en prison.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Incidenter</div> <div class="glossaire-definition">Faire naître des incidents dans une procédure.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Incompétence territoriale</div> <div class="glossaire-definition">Inaptitude d’une juridiction à connaître d’une affaire pour cause de compétence géographique.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Inconstitutionnalité</div> <div class="glossaire-definition">Non-conformité d’une norme à la Constitution.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Incrimination</div> <div class="glossaire-definition">Définition légale d’une infraction.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Incubateur d’entreprises</div> <div class="glossaire-definition">Organisme aidant à la création ou reprise d’entreprises.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Indemniser</div> <div class="glossaire-definition">Réparer un préjudice subi.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Indissoluble</div> <div class="glossaire-definition">Qui ne peut être dissous volontairement.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Infanticide</div> <div class="glossaire-definition">Meurtre d’un enfant nouveau-né.</div> </div> </div> </div>
+   <div class="letter-section"> <div class="letter-header" id="J">J</div> <div class="glossaire-list"> <div class="glossaire-item"> <div class="glossaire-term">Jouissance</div> <div class="glossaire-definition">Droit de percevoir les fruits d’un bien.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Jouissance légale</div> <div class="glossaire-definition">Droit d’usufruit accordé aux parents sur les biens de leur enfant mineur.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Jour férié</div> <div class="glossaire-definition">Jour de fête légale chômé.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Jour ouvrable</div> <div class="glossaire-definition">Jour normalement travaillé.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Jour ouvré</div> <div class="glossaire-definition">Jour effectivement travaillé.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Journal officiel (JO)</div> <div class="glossaire-definition">Publication officielle des lois et règlements.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Judiciaire (pouvoir)</div> <div class="glossaire-definition">Organes chargés de rendre la justice.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Juge</div> <div class="glossaire-definition">Personne investie du pouvoir de juger.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Juge des référés</div> <div class="glossaire-definition">Juge statuant en urgence.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Jugement</div> <div class="glossaire-definition">Décision d’une juridiction.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Jugement contradictoire</div> <div class="glossaire-definition">Jugement rendu après débat contradictoire.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Jugement définitif</div> <div class="glossaire-definition">Jugement tranchant sur le fond.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Jugement en dernier ressort</div> <div class="glossaire-definition">Jugement non susceptible d’appel.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Jugement par défaut</div> <div class="glossaire-definition">Jugement rendu en l’absence du défendeur.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Jus solis</div> <div class="glossaire-definition">Droit du sol, attribution de la nationalité selon le lieu de naissance.</div> </div> </div> </div>
+      <div class="letter-section"> <div class="letter-header" id="K">K</div> <div class="glossaire-list"> <div class="glossaire-item"> <div class="glossaire-term">Kafala</div> <div class="glossaire-definition">Forme de tutelle légale sur un enfant abandonné.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Kératose juridique</div> <div class="glossaire-definition">Métaphore désignant un droit rigide et figé.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Kidnapping</div> <div class="glossaire-definition">Enlèvement illégal souvent suivi d’une demande de rançon.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Kiosque juridique</div> <div class="glossaire-definition">Point d’accès à la documentation juridique.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Knock-for-knock agreement</div> <div class="glossaire-definition">Accord entre assureurs pour prise en charge respective de leurs assurés.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Krach boursier</div> <div class="glossaire-definition">Chute brutale des cours boursiers.</div> </div> </div> </div>
+<div class="letter-section"> <div class="letter-header" id="L">L</div> <div class="glossaire-list"> <div class="glossaire-item"> <div class="glossaire-term">Légalité des délits et des peines</div> <div class="glossaire-definition">Principe selon lequel nul ne peut être poursuivi ou condamné que conformément à la loi en vigueur.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Législation comparée</div> <div class="glossaire-definition">Étude des systèmes juridiques de différents pays.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Légitime défense</div> <div class="glossaire-definition">Cause d’exonération en cas de riposte proportionnée à une agression.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Lésion</div> <div class="glossaire-definition">Déséquilibre grave dans un contrat causant préjudice.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Libération conditionnelle</div> <div class="glossaire-definition">Libération anticipée sous conditions d’un détenu.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Liberté d’expression</div> <div class="glossaire-definition">Droit d’exprimer ses opinions dans le respect des lois.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Liberté de commerce et d’industrie</div> <div class="glossaire-definition">Droit d’exercer une activité économique librement.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Liberté individuelle</div> <div class="glossaire-definition">Droit fondamental à la liberté de mouvement et à la protection de la personne.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Lien de subordination</div> <div class="glossaire-definition">Relation de travail où le salarié est soumis à la direction de l’employeur.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Liquidation judiciaire</div> <div class="glossaire-definition">Procédure de cessation d’activité d’une entreprise en difficulté.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Litige</div> <div class="glossaire-definition">Conflit soumis à la justice.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Location</div> <div class="glossaire-definition">Contrat de mise à disposition d’un bien moyennant paiement.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Loi</div> <div class="glossaire-definition">Règle générale obligatoire édictée par une autorité compétente.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Lafif</div> <div class="glossaire-definition">Mode de preuve par témoignage collectif.</div> </div> </div> </div>
+       <div class="letter-section"> <div class="letter-header" id="M">M</div> <div class="glossaire-list"> <div class="glossaire-item"> <div class="glossaire-term">Magistrature</div> <div class="glossaire-definition">Corps des magistrats, organe de la justice.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Mandat</div> <div class="glossaire-definition">Durée légale d’exercice d’une fonction.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Marché public</div> <div class="glossaire-definition">Contrat entre une administration et un opérateur privé.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Médiateur</div> <div class="glossaire-definition">Personne chargée de faciliter la résolution amiable des conflits.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Ministère</div> <div class="glossaire-definition">Organe de l’administration dirigé par un ministre.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Mission de service public</div> <div class="glossaire-definition">Activité assurée pour l’intérêt général.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Modernisation de l’État</div> <div class="glossaire-definition">Réformes visant à améliorer l’administration.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Monopole</div> <div class="glossaire-definition">Domaine réservé à l’État ou à un établissement public.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Motion de censure</div> <div class="glossaire-definition">Procédure permettant de renverser un gouvernement.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Municipalité</div> <div class="glossaire-definition">Collectivité territoriale locale.</div> </div> </div> </div>
+<div class="letter-section"> <div class="letter-header" id="N">N</div> <div class="glossaire-list"> <div class="glossaire-item"> <div class="glossaire-term">Nationalité</div> <div class="glossaire-definition">Lien juridique entre une personne et un État.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Négociation internationale</div> <div class="glossaire-definition">Processus de conclusion des traités.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Neutralité de l’administration</div> <div class="glossaire-definition">Principe d’impartialité de l’administration.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Niveau de compétence</div> <div class="glossaire-definition">Répartition des compétences entre niveaux administratifs.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Nomination</div> <div class="glossaire-definition">Désignation à un poste.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Norme juridique</div> <div class="glossaire-definition">Règle de droit applicable.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Notaire</div> <div class="glossaire-definition">Officier public authentifiant les actes.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Nouvelles technologies (NTIC)</div> <div class="glossaire-definition">Enjeux juridiques liés aux technologies numériques.</div> </div> </div> </div>
+    <div class="letter-section"> <div class="letter-header" id="O">O</div> <div class="glossaire-list"> <div class="glossaire-item"> <div class="glossaire-term">Objet</div> <div class="glossaire-definition">Prestation ou chose faisant l’objet d’un contrat.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Obligation</div> <div class="glossaire-definition">Lien juridique contraignant une partie envers une autre.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Obligation contractuelle</div> <div class="glossaire-definition">Obligation née d’un contrat.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Obligation en nature</div> <div class="glossaire-definition">Obligation de faire ou ne pas faire.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Obligation naturelle</div> <div class="glossaire-definition">Obligation non exécutoire en justice.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Obtention frauduleuse</div> <div class="glossaire-definition">Acquisition par des moyens trompeurs.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Occupation de locaux</div> <div class="glossaire-definition">Action collective visant à bloquer un lieu pour protester.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">OCDE</div> <div class="glossaire-definition">Organisation de coopération économique.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Officier de police judiciaire</div> <div class="glossaire-definition">Fonctionnaire chargé des enquêtes.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Opposition</div> <div class="glossaire-definition">Recours contre un jugement rendu par défaut.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Ordonnance</div> <div class="glossaire-definition">Acte gouvernemental pris avec l’accord du Parlement.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Ordre public</div> <div class="glossaire-definition">Règles impératives pour la moralité ou la sécurité.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Original</div> <div class="glossaire-definition">Acte sous signature privée dûment signé.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Ouverture</div> <div class="glossaire-definition">Début de l’exercice d’un droit ou action.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Ouvrier</div> <div class="glossaire-definition">Salarié participant directement à la production.</div> </div> </div> </div>
+        <div class="letter-section"> <div class="letter-header" id="P">P</div> <div class="glossaire-list"> <div class="glossaire-item"> <div class="glossaire-term">Pacte d’actionnaires</div> <div class="glossaire-definition">Convention entre associés pour régler leurs relations.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Parasitisme</div> <div class="glossaire-definition">Exploitation abusive de la réputation d’un concurrent.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Parlement</div> <div class="glossaire-definition">Assemblée législative.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Parquet</div> <div class="glossaire-definition">Magistrats du ministère public.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Persona non grata</div> <div class="glossaire-definition">Diplomate non agréé par le pays d’accueil.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Partage</div> <div class="glossaire-definition">Opération juridique par laquelle les cohéritiers mettent fin à l'indivision successorale en répartissant les biens entre eux. Le partage peut être amiable (par accord) ou judiciaire (par décision de justice).</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Partie civile</div> <div class="glossaire-definition">Personne physique ou morale qui, dans une procédure pénale, se constitue partie civile pour demander réparation du préjudice subi du fait de l'infraction.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Pension alimentaire</div> <div class="glossaire-definition">Somme d'argent versée régulièrement par une personne pour subvenir aux besoins d'une autre, généralement en cas de séparation ou divorce, notamment pour l'entretien des enfants.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Peremption</div> <div class="glossaire-definition">Extinction d'un droit ou d'une action par l'effet de l'écoulement d'un délai fixé par la loi, empêchant toute action en justice pour faire valoir ce droit.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Personnalité juridique</div> <div class="glossaire-definition">Capacité reconnue par la loi à une entité (personne physique ou morale) d'être titulaire de droits et d'obligations.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Pièce à conviction</div> <div class="glossaire-definition">Objet matériel ou document présenté en justice et qui sert de preuve dans le cadre d'une procédure pénale.</div> </div> <div class="glossaire-item"> <div class="glossaire-term">Plainte</div> <div class="glossaire-definition">Déclaration formelle auprès des autorités judiciaires par laquelle une personne signale une infraction dont elle a été victime et demande que des poursuites soient engagées.</div> </div> </div> </div>
+     <div class="letter-section">
+  <div class="letter-header" id="Q">Q</div>
+  <div class="glossaire-list">
+    <div class="glossaire-item">
+      <div class="glossaire-term">Qualification</div>
+      <div class="glossaire-definition">Action d’attribuer une qualification juridique.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Qualité</div>
+      <div class="glossaire-definition">État civil ou politique d’une personne.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Quarantaine</div>
+      <div class="glossaire-definition">Isolement sanitaire de 40 jours.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Quart</div>
+      <div class="glossaire-definition">Période de service d’équipage.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Quasi contractuel</div>
+      <div class="glossaire-definition">Qui résulte d’un quasi-contrat.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Quasi délictuel</div>
+      <div class="glossaire-definition">Qui résulte d’un quasi-délit.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Questionnaire</div>
+      <div class="glossaire-definition">Document listant des questions à répondre.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Quête</div>
+      <div class="glossaire-definition">Appel à la générosité publique.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Quittance</div>
+      <div class="glossaire-definition">Écrit reconnaissant un paiement.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Quitus</div>
+      <div class="glossaire-definition">Décharge de responsabilité.</div>
+    </div>
+  </div>
+</div>
+        <div class="letter-section">
+  <div class="letter-header" id="R">R</div>
+  <div class="glossaire-list">
+    <div class="glossaire-item">
+      <div class="glossaire-term">Rappel à l’ordre</div>
+      <div class="glossaire-definition">Sanction disciplinaire parlementaire.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Rapport</div>
+      <div class="glossaire-definition">Exposé écrit des faits et arguments.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Rapport des dons et legs à fin d’égalité</div>
+      <div class="glossaire-definition">Remise à la masse successorale des biens reçus.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Rapport des dons et legs à fin de réduction</div>
+      <div class="glossaire-definition">Inclusion dans la succession des biens donnés au-delà de la quotité.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Rapport en moins prenant</div>
+      <div class="glossaire-definition">Indemnisation pécuniaire au lieu de restitution matérielle.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Rapport en nature</div>
+      <div class="glossaire-definition">Restitution matérielle d’un bien.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Rapporter</div>
+      <div class="glossaire-definition">Revenir sur un acte ou faire un rapport.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Rapporteur</div>
+      <div class="glossaire-definition">Parlementaire chargé de rendre compte.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Ratification</div>
+      <div class="glossaire-definition">Approbation d’un acte fait par un tiers.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Ratio decidendi</div>
+      <div class="glossaire-definition">Motifs essentiels d’une décision judiciaire.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Réassurance</div>
+      <div class="glossaire-definition">Contrat par lequel un assureur cède une partie de ses risques.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Recel</div>
+      <div class="glossaire-definition">Détournement d’un bien commun.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Récépissé</div>
+      <div class="glossaire-definition">Écrit confirmant la réception d’un bien ou somme.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Réception</div>
+      <div class="glossaire-definition">Approbation des travaux par le maître d’ouvrage.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Recevabilité</div>
+      <div class="glossaire-definition">Caractère d’une demande pouvant être examinée.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Recherche de maternité/paternité</div>
+      <div class="glossaire-definition">Action judiciaire pour établir la filiation.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Récidive</div>
+      <div class="glossaire-definition">Nouvelle infraction commise après condamnation.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Réciprocité</div>
+      <div class="glossaire-definition">Condition d’égalité dans la reconnaissance des droits.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Réconciliation</div>
+      <div class="glossaire-definition">Retour à la vie commune des époux.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Recours</div>
+      <div class="glossaire-definition">Voie pour contester une décision.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Recouvrement des pensions alimentaires</div>
+      <div class="glossaire-definition">Procédures pour obtenir le paiement.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Reçu</div>
+      <div class="glossaire-definition">Écrit confirmant la remise d’une somme.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Redressement judiciaire</div>
+      <div class="glossaire-definition">Procédure de réorganisation d’une entreprise en difficulté.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Réduction de peine</div>
+      <div class="glossaire-definition">Diminution de la durée d’une peine.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Référé</div>
+      <div class="glossaire-definition">Procédure d’urgence.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Res Judicata (Autorité de la chose jugée)</div>
+      <div class="glossaire-definition">Principe d’impossibilité de rouvrir un litige déjà jugé définitivement.</div>
+    </div>
+  </div>
+</div>
+
+       <div class="letter-section">
+  <div class="letter-header" id="S">S</div>
+  <div class="glossaire-list">
+    <div class="glossaire-item">
+      <div class="glossaire-term">Saisine</div>
+      <div class="glossaire-definition">Droit de l’héritier de prendre possession des biens.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Secret professionnel</div>
+      <div class="glossaire-definition">Obligation de confidentialité des professionnels.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Siège social</div>
+      <div class="glossaire-definition">Adresse administrative d’une société.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Silence</div>
+      <div class="glossaire-definition">Absence de réponse pouvant valoir acceptation selon les circonstances.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Sommation</div>
+      <div class="glossaire-definition">Acte ordonnant l’exécution d’une obligation.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Société</div>
+      <div class="glossaire-definition">Contrat de mise en commun de biens ou travail pour partager des bénéfices.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Stipulation pour autrui</div>
+      <div class="glossaire-definition">Clause donnant un avantage à un tiers.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Succession</div>
+      <div class="glossaire-definition">Transmission des biens d’une personne décédée.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Superficie</div>
+      <div class="glossaire-definition">Droit de construire sur un fonds appartenant à autrui.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Sûreté</div>
+      <div class="glossaire-definition">Garantie pour assurer le paiement d’une dette.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Sursis</div>
+      <div class="glossaire-definition">Suspension de l’exécution d’une peine.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Synallagmatique</div>
+      <div class="glossaire-definition">Contrat avec obligations réciproques.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Sine qua non</div>
+      <div class="glossaire-definition">Condition indispensable.</div>
+    </div>
+  </div>
+</div>
+       <div class="letter-section">
+  <div class="letter-header" id="T">T</div>
+  <div class="glossaire-list">
+    <div class="glossaire-item">
+      <div class="glossaire-term">Tacite reconduction</div>
+      <div class="glossaire-definition">Renouvellement automatique d’un contrat.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Taux de l’impôt</div>
+      <div class="glossaire-definition">Pourcentage appliqué pour calculer un impôt.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Témoin</div>
+      <div class="glossaire-definition">Personne déposant sur des faits qu’elle a personnellement constatés.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Tentative</div>
+      <div class="glossaire-definition">Commencement d’exécution d’une infraction.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Terme</div>
+      <div class="glossaire-definition">Événement futur conditionnant un droit.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Testament</div>
+      <div class="glossaire-definition">Acte unilatéral disposant des biens pour après décès.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Torts</div>
+      <div class="glossaire-definition">Actes illicites causant un dommage.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Traité</div>
+      <div class="glossaire-definition">Accord international écrit entre États.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Transfert de propriété</div>
+      <div class="glossaire-definition">Opération faisant passer la propriété d’un bien.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Transitaire</div>
+      <div class="glossaire-definition">Professionnel des formalités douanières.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Travailleurs à domicile</div>
+      <div class="glossaire-definition">Personnes effectuant un travail rémunéré à domicile.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Travaux publics</div>
+      <div class="glossaire-definition">Travaux d’utilité générale.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Tribunal</div>
+      <div class="glossaire-definition">Juridiction rendant la justice.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Trésorerie Générale du Royaume</div>
+      <div class="glossaire-definition">Administration gérant les flux financiers de l’État.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Tuteur</div>
+      <div class="glossaire-definition">Personne chargée de représenter un mineur ou majeur protégé.</div>
+    </div>
+  </div>
+</div>
+<div class="letter-section">
+  <div class="letter-header" id="U">U</div>
+  <div class="glossaire-list">
+    <div class="glossaire-item">
+      <div class="glossaire-term">Unanimité</div>
+      <div class="glossaire-definition">Accord de tous les membres d’un organe délibérant.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Unesco</div>
+      <div class="glossaire-definition">Organisation des Nations Unies pour l’éducation, la science et la culture.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Unidroit</div>
+      <div class="glossaire-definition">Organisation intergouvernementale pour l’harmonisation du droit privé.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Unilatéral</div>
+      <div class="glossaire-definition">Décision prise par une seule partie.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Universalité</div>
+      <div class="glossaire-definition">Principe budgétaire interdisant la compensation entre ressources et charges.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Universalité de droit</div>
+      <div class="glossaire-definition">Ensemble de droits et obligations soumis à un système juridique.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Urbanisme</div>
+      <div class="glossaire-definition">Règles et actions pour un développement ordonné.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Urgence</div>
+      <div class="glossaire-definition">Réponse rapide à une menace grave.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Usage</div>
+      <div class="glossaire-definition">Pratique habituelle.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Usufruit</div>
+      <div class="glossaire-definition">Droit de jouir d’un bien appartenant à autrui en en conservant la substance.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Usufruitier</div>
+      <div class="glossaire-definition">Titulaire d’un usufruit.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Usurpations</div>
+      <div class="glossaire-definition">Infractions d’appropriation illégale de fonctions ou titres.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Utilité satisfactoire</div>
+      <div class="glossaire-definition">Satisfaction retirée de l’exécution d’un contrat.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Uxoricide</div>
+      <div class="glossaire-definition">Meurtre d’une femme par son conjoint.</div>
+    </div>
+  </div>
+</div>
+<div class="letter-section">
+  <div class="letter-header" id="V">V</div>
+  <div class="glossaire-list">
+    <div class="glossaire-item">
+      <div class="glossaire-term">Validation</div>
+      <div class="glossaire-definition">Opération reconnaissant la véracité d'un fait ou la régularité d'un acte.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Valorisation</div>
+      <div class="glossaire-definition">Action d'augmenter la valeur d'une chose.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Vendeur</div>
+      <div class="glossaire-definition">Personne qui vend un bien.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Vente</div>
+      <div class="glossaire-definition">Contrat transférant la propriété d'une chose contre paiement.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Verbal</div>
+      <div class="glossaire-definition">Fait oralement.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Verbaliser</div>
+      <div class="glossaire-definition">Établir un procès-verbal.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Versement</div>
+      <div class="glossaire-definition">Action de remettre une somme d'argent.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Veto</div>
+      <div class="glossaire-definition">Opposition à l'adoption d'un acte.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Vicié</div>
+      <div class="glossaire-definition">Acte juridique entaché d'un vice affectant sa validité.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Victime</div>
+      <div class="glossaire-definition">Personne subissant un préjudice.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Vide juridique</div>
+      <div class="glossaire-definition">Lacune dans le droit que le juge doit combler.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Violence</div>
+      <div class="glossaire-definition">Contrainte illégitime exercée par force ou intimidation.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Vice caché</div>
+      <div class="glossaire-definition">Défaut non apparent au moment de la vente, rendant le bien impropre à l'usage auquel on le destine, ou diminuant tellement cet usage que l'acheteur ne l'aurait pas acquis ou en aurait donné un moindre prix s'il en avait eu connaissance. Le vendeur est tenu de garantir l'acheteur contre ces défauts et peut être obligé à la réparation, à l'échange ou à la restitution du prix.</div>
+    </div>
+  </div>
+</div>
+
+<div class="letter-section">
+  <div class="letter-header" id="W">W</div>
+  <div class="glossaire-list">
+    <div class="glossaire-item">
+      <div class="glossaire-term">Wagon</div>
+      <div class="glossaire-definition">Véhicule ferroviaire sans moteur pour le transport de fret.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Warrant</div>
+      <div class="glossaire-definition">Sûreté mobilière relevant du gage.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Warrantage</div>
+      <div class="glossaire-definition">Constitution d'un warrant.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Warranté</div>
+      <div class="glossaire-definition">Bien donné en garantie.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Wergeld</div>
+      <div class="glossaire-definition">Compensation pécuniaire pour éviter la vengeance privée.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Whip</div>
+      <div class="glossaire-definition">Député chargé d'assurer la discipline de vote.</div>
+    </div>
+  </div>
+</div>
+
+<div class="letter-section">
+  <div class="letter-header" id="X">X</div>
+  <div class="glossaire-list">
+    <div class="glossaire-item">
+      <div class="glossaire-term">Xénophobie</div>
+      <div class="glossaire-definition">Discrimination ou exclusion des étrangers.</div>
+    </div>
+  </div>
+</div>
+
+<div class="letter-section">
+  <div class="letter-header" id="Y">Y</div>
+  <div class="glossaire-list">
+    <div class="glossaire-item">
+      <div class="glossaire-term">Yalta</div>
+      <div class="glossaire-definition">Accords politiques internationaux de 1945.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Yellow dog contract</div>
+      <div class="glossaire-definition">Clause interdisant au salarié d'adhérer à un syndicat.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Yield</div>
+      <div class="glossaire-definition">Rendement financier.</div>
+    </div>
+  </div>
+</div>
+
+<div class="letter-section">
+  <div class="letter-header" id="Z">Z</div>
+  <div class="glossaire-list">
+    <div class="glossaire-item">
+      <div class="glossaire-term">Zone agricole</div>
+      <div class="glossaire-definition">Secteur protégé pour son potentiel agronomique.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Zone à urbaniser par priorité</div>
+      <div class="glossaire-definition">Zone destinée à la construction résidentielle.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Zone contiguë</div>
+      <div class="glossaire-definition">Zone maritime sous contrôle pour prévenir les infractions.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Zone d'aménagement concerté</div>
+      <div class="glossaire-definition">Zone où une personne publique aménage les terrains.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Zone d'aménagement différé</div>
+      <div class="glossaire-definition">Zone avec droit de préemption pour prévenir la spéculation.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Zone d'attente</div>
+      <div class="glossaire-definition">Lieu de rétention temporaire des étrangers sans titre.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Zone d'influence</div>
+      <div class="glossaire-definition">Zone réservée à l'influence politique d'un État.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Zone d'intérêt économique et écologique</div>
+      <div class="glossaire-definition">Zone pour l'implantation d'activités économiques avec prise en compte écologique.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Zone d'intervention foncière</div>
+      <div class="glossaire-definition">Zone où les communes ont un droit de préemption.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Zone de conservation halieutique</div>
+      <div class="glossaire-definition">Zone protégée pour la reproduction des ressources halieutiques.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Zone de libre-échange</div>
+      <div class="glossaire-definition">Zone sans barrières douanières.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Zone économique exclusive</div>
+      <div class="glossaire-definition">Zone maritime sous souveraineté étendue jusqu'à 200 milles marins.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Zone euro</div>
+      <div class="glossaire-definition">Zone monétaire européenne.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Zone franche</div>
+      <div class="glossaire-definition">Territoire exempté de droits de douane.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Zone franche urbaine</div>
+      <div class="glossaire-definition">Secteur urbain avec exonérations fiscales.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Zone internationale des fonds marins</div>
+      <div class="glossaire-definition">Zone internationale sous-marine.</div>
+    </div>
+    <div class="glossaire-item">
+      <div class="glossaire-term">Zones humides</div>
+      <div class="glossaire-definition">Terrains inondés protégés pour leur utilité écologique.</div>
+    </div>
+  </div>
+</div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>Glossaire juridique marocain - Tous droits réservés</p>
+            <div class="footer-links">
+                <a href="#">Mentions légales</a>
+                <a href="#">Contact</a>
+                <a href="#">À propos</a>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Droit Maroc
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('searchInput').addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const items = document.querySelectorAll('.glossaire-item');
+            
+            items.forEach(item => {
+                const term = item.querySelector('.glossaire-term').textContent.toLowerCase();
+                const definition = item.querySelector('.glossaire-definition').textContent.toLowerCase();
+                
+                if (term.includes(searchTerm) || definition.includes(searchTerm)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+        
+        const alphabetLinks = document.querySelectorAll('.alphabet-filter a');
+        alphabetLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                alphabetLinks.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
